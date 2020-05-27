@@ -6,7 +6,7 @@
 function flatten(array) {
     let newArray = [];
     for(let i = 0; i < array.length; i++) {
-        if(typeof array[i] == "object") {
+        if(Array.isArray(array[i])) {
             newArray = newArray.concat(flatten(array[i]));
         } else {
             newArray.push(array[i]);
