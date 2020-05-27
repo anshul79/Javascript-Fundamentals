@@ -14,6 +14,6 @@ Function.prototype.bind = function(newContext) {
     // point 'this' to newContext's scope
     const fn = this;
     return function () {
-        fn.call(newContext);
+        fn.apply(newContext, arguments);
     };
 };
