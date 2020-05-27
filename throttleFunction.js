@@ -2,7 +2,7 @@
 // throttle(throttledFn, 3000);
 
 function throttle(func, time) {
-    let setTimeoutId;
+    var setTimeoutId;
 
     return function (arguments) {
         if(setTimeoutId) {
@@ -10,7 +10,7 @@ function throttle(func, time) {
         }
 
         setTimeoutId = setTimeout(() => {
-            func.apply(this, arguments);
+            func.apply(this, arguments);  // OR func.call(this, ...arguments);
             setTimeoutId = null;
         }, time);
     }
