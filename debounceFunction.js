@@ -4,7 +4,7 @@
 function debounce(func, time) {
     let setTimeoutId;
 
-    return function () {
+    return function (arguments) {
         if(setTimeoutId) {
             clearInterval(setTimeoutId);
         }
