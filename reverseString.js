@@ -9,7 +9,8 @@ function reverse (str) {
     return arr.reverse().join("");
 }
 
-// console.log(reverse("Anshul, hi!"));
+var exampleString = "Anshul, hi!";
+// console.log(reverse(exampleString));
 
 function reverse2 (str) {
     var arr = str.split("");
@@ -21,7 +22,7 @@ function reverse2 (str) {
     return arr.join("");
 }
 
-// console.log(reverse2("Anshul, hi!"));
+// console.log(reverse2(exampleString));
 
 function reverse3 (str) {
     var newString = "";
@@ -31,7 +32,7 @@ function reverse3 (str) {
     return newString;
 }
 
-// console.log(reverse3("Anshul, hi!"));
+// console.log(reverse3(exampleString));
 
 // function reverse4 (str) {
 //     for(let i = 0, j = str.length - 1; i < j; i++, j--) {
@@ -42,4 +43,4 @@ function reverse3 (str) {
 //     return str;
 // }
 
-// console.log(reverse4("Anshul, hi!"));
+// console.log(reverse4(exampleString));

@@ -20,7 +20,8 @@ function removeDuplicates(str) { // using Set
     return arr.join(' ');
 }
 
-// console.log(removeDuplicates('This test is is a test test string test'));
+var exampleString = 'This test is is a test test string test';
+// console.log(removeDuplicates(exampleString));
 
 function removeDuplicates2(str) {
     const arr = str.split(' ');
@@ -28,7 +29,7 @@ function removeDuplicates2(str) {
     return [...mySet].join(' ');
 }
 
-// console.log(removeDuplicates2('This test is is a test test string test'));
+// console.log(removeDuplicates2(exampleString));
 
 function removeDuplicates3(str) { // using arrays
     const arr = str.split(' ');
@@ -41,4 +42,4 @@ function removeDuplicates3(str) { // using arrays
     return newArray.join(' ');
 }
 
-// console.log(removeDuplicates3('This test is is a test test string test'));
+// console.log(removeDuplicates3(exampleString));
