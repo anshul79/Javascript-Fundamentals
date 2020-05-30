@@ -5,10 +5,10 @@
         console.log(msg1 + ' ' + msg2 + ' ' + this.bar);
     }
 
-    foo.call({bar: 'Anshul'}, 'hello', 'world'); // hello world Anshul
+    foo.mycall({bar: 'Anshul'}, 'hello', 'world'); // hello world Anshul
 */
 
-Function.prototype.call = function(newContext) {
+Function.prototype.mycall = function(newContext) {
     // point 'this' to newContext's scope and call the function
     newContext.fn = this;
 

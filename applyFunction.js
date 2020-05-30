@@ -5,10 +5,10 @@
         console.log(msg1 + ' ' + msg2 + ' ' + this.bar);
     }
 
-    foo.apply({bar: 'Anshul'}, ['hello', 'world']); // hello world Anshul
+    foo.myapply({bar: 'Anshul'}, ['hello', 'world']); // hello world Anshul
 */
 
-Function.prototype.apply = function(newContext) {
+Function.prototype.myapply = function(newContext) {
     // point 'this' to newContext's scope and call the function
     newContext.fn = this;
 
