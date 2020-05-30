@@ -14,5 +14,5 @@ Function.prototype.apply = function(newContext) {
 
     var args = arguments[1];
 
-    newContext.fn(...args);
+    return newContext.fn(...args);
 };

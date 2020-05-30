@@ -5,7 +5,7 @@
         console.log(msg1 + ' ' + msg2 + ' ' + this.bar);
     }
 
-    foo.apply({bar: 'Anshul'}, 'hello', 'world); // hello world Anshul
+    foo.call({bar: 'Anshul'}, 'hello', 'world'); // hello world Anshul
 */
 
 Function.prototype.call = function(newContext) {
@@ -17,5 +17,5 @@ Function.prototype.call = function(newContext) {
         args.push(arguments[i]);
     }
 
-    newContext.fn(...args);
+    return newContext.fn(...args);
 };
