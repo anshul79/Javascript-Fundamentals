@@ -1,4 +1,4 @@
-// Create an iterator / createFlow function with a next method that returns the next value in the array
+// Create an iterator function that iterates over an array
 
 function iterator(array) {
     let i = 0;
