@@ -6,7 +6,21 @@
         resolutionFunc("Yayyy");
     });
     // At this point, "promiseA" is already settled.
-    promiseA.then( (val) => console.log("asynchronous logging has val:",val) );
+    promiseA.then(function (val) {
+        for(let i = 0; i < 1000000000; i++) {
+            // do nothing
+        }
+        console.log("asynchronous logging has val:",val);
+        return val;
+    })
+    .then(function (val2) {
+        val2 += ", promise chaining is done";
+        console.log(val2);
+        return val2;
+    })
+    .then(function (val3) {
+        console.log(val3 + "! I am now happy");
+    });
     console.log("immediate logging");
 */
 
@@ -58,7 +72,9 @@ class Promise {
 		this.onFulfillment.push(onFulfilled);
 		this.onRejection.push(onRejected);
         // return another promise for chaining
-        // return new Promise();
+        return new Promise((resolve, reject) => {
+            resolve(this.value);
+        });
     }
 
     catch = (onRejected) => {
@@ -68,14 +84,14 @@ class Promise {
     // run onFulfillment functions with argument value
     callOnResolution = () => {
         this.onFulfillment.forEach(onFulfilled => {
-            onFulfilled(this.value);
+            this.value = onFulfilled(this.value);
         })
         this.onFulfillment.length = 0;
     }
 
     callOnRejection = () => {
         this.onRejection.forEach(onRejected => {
-            onRejected(this.value);
+            this.value = onRejected(this.value);
         })
         this.onRejection.length = 0;
     }
