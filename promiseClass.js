@@ -58,7 +58,7 @@ class Promise {
 		this.onFulfillment.push(onFulfilled);
 		this.onRejection.push(onRejected);
         // return another promise for chaining
-        return new Promise();
+        // return new Promise();
     }
 
     catch = (onRejected) => {
