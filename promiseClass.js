@@ -11,14 +11,14 @@
 */
 
 class Promise {
-    isFulfilled = {
+    statuses = {
 		pending: 'Pending',
 		resolved: 'Resolved',
 		rejected: 'Rejected'
     }
     constructor(func) {
         this.value = undefined;
-        this.status = this.isFulfilled.pending;
+        this.status = this.statuses.pending;
         this.onFulfillment = [];
         this.onRejection = [];
 
@@ -33,13 +33,13 @@ class Promise {
 
         // func will call resolve or reject
         const resolve = (value) => {
-            this.status = this.isFulfilled.resolved;
+            this.status = this.statuses.resolved;
             this.value = value;
             this.callOnResolution();
         };
 
         const reject = (value) => {
-            this.status = this.isFulfilled.rejected;
+            this.status = this.statuses.rejected;
             this.value = value;
             this.callOnRejection();
         };
