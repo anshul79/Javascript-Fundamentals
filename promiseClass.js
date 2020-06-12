@@ -1,5 +1,6 @@
 /* Implement Promise class */
 
+// Test case 1:
 /*
     const promiseA = new Promise( (resolutionFunc,rejectionFunc) => {
         // a long for loop can be put here
@@ -83,10 +84,15 @@ class Promise {
 
     // run onFulfillment functions with argument value
     callOnResolution = () => {
-        this.onFulfillment.forEach(onFulfilled => {
-            this.value = onFulfilled(this.value);
-        })
-        this.onFulfillment.length = 0;
+        try {
+            this.onFulfillment.forEach(onFulfilled => {
+                this.value = onFulfilled(this.value);
+            })
+            this.onFulfillment.length = 0;
+        } catch (error) {
+            this.value = error;
+            this.callOnRejection();
+        }
     }
 
     callOnRejection = () => {
