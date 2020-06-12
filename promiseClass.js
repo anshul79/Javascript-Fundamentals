@@ -26,9 +26,9 @@
 
 class Promise {
     statuses = {
-		pending: 'Pending',
-		resolved: 'Resolved',
-		rejected: 'Rejected'
+        pending: 'Pending',
+        resolved: 'Resolved',
+        rejected: 'Rejected'
     }
     constructor(func) {
         this.value = undefined;
@@ -36,10 +36,10 @@ class Promise {
         this.onFulfillment = [];
         this.onRejection = [];
 
-		var futureData = {
-			value: this.value,
-			status: this.status,
-			onFulfillment: this.onFulfillment,
+        var futureData = {
+            value: this.value,
+            status: this.status,
+            onFulfillment: this.onFulfillment,
             onRejection: this.onRejection,
             then: this.then,
             catch: this.catch
@@ -68,9 +68,9 @@ class Promise {
         return futureData;
     }
     
-	then = (onFulfilled, onRejected) => {
-		this.onFulfillment.push(onFulfilled);
-		this.onRejection.push(onRejected);
+    then = (onFulfilled, onRejected) => {
+        this.onFulfillment.push(onFulfilled);
+        this.onRejection.push(onRejected);
         // return another promise for chaining
         return new Promise((resolve, reject) => {
             resolve(this.value);
