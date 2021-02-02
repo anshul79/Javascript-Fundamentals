@@ -1,4 +1,4 @@
-// Implement the functionality of async and await using async and await keywords
+// Implement the functionality of async and await without using async and await keywords
 
 function doWhenDataReceived (value) {
     returnNextElement.next(value);
